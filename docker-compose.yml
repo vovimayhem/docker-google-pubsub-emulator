@@ -12,6 +12,6 @@ services:
     ports:
     - ${PUBSUB_PORT:-8085}:8085
     volumes:
-    - pubsub_data:/var/pubsub
+    - pubsub_data:/data
     # Override the image's entrypoint during testing:
     - ./entrypoint.sh:/usr/local/bin/entrypoint.sh

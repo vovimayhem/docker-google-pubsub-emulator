@@ -20,10 +20,10 @@ docker run -p 8085:8085 vovimayhem/google-pubsub-emulator
 ### Data volume
 
 This image accepts mounting a volume for the emulator to store data. Inside the
-pubsub, the emulator expects the data to be available at `/var/pubsub`:
+pubsub, the emulator expects the data to be available at `/data`:
 
 ```bash
-docker run -p 8085:8085 -v /tmp/data:/var/pubsub vovimayhem/google-pubsub-emulator
+docker run -p 8085:8085 -v /tmp/data:/data vovimayhem/google-pubsub-emulator
 ```
 
 ### Docker Compose
@@ -44,7 +44,7 @@ services:
     ports:
     - ${PUBSUB_PORT:-8085}:8085
     volumes:
-    - pubsub_data:/var/pubsub
+    - pubsub_data:/data
   app:
     # Some lines ommitted
     environment:

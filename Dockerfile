@@ -9,8 +9,8 @@ ENV LANG=C.UTF-8 \
     JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/jre \
     PATH=/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin:$PATH
 
-# Step 3: Set /var/pubsub as a volume:
-VOLUME /var/pubsub
+# Step 3: Set /data as a volume:
+VOLUME /data
 
 # Step 4: Install OpenJDK Java Runtime Environment:
 RUN set -x && \

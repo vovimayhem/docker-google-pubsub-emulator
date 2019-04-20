@@ -15,9 +15,9 @@ fi
 # 3: Add default flags for "gcloud beta emulators pubsub start":
 if [ "$5" == "start" ]
 then
-  mkdir -p /var/pubsub
+  mkdir -p /data
 
-  set -- "$@" --data-dir=/var/pubsub
+  set -- "$@" --data-dir=/data
   set -- "$@" --host-port=0.0.0.0:8085
   set -- "$@" --log-http
   set -- "$@" --verbosity=debug
