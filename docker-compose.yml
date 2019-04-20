@@ -1,0 +1,17 @@
+version: "2.4"
+
+volumes:
+  pubsub_data:
+
+services:
+  pubsub:
+    image: vovimayhem/google-pubsub-emulator:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - ${PUBSUB_PORT:-8085}:8085
+    volumes:
+    - pubsub_data:/var/pubsub
+    # Override the image's entrypoint during testing:
+    - ./entrypoint.sh:/usr/local/bin/entrypoint.sh
